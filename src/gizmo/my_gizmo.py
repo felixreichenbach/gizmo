@@ -38,19 +38,15 @@ class MyGizmo(Gizmo, Reconfigurable):
         arg1 = config.attributes.fields["arg1"].string_value
         if arg1 == "":
             raise Exception("A arg1 attribute is required for Gizmo component.")
-        motor = [config.attributes.fields["motor"].string_value]
-        if motor == [""]:
-            raise Exception("A motor is required for Gizmo component.")
-        return motor
 
     async def do_one(self, arg1: str, **kwargs) -> bool:
         return arg1 == self.my_arg
 
-    async def do_one_client_stream(self, arg1: Sequence[str], **kwargs) -> bool:
-        if len(arg1) == 0:
+    async def do_one_client_stream(self, args: Sequence[str], **kwargs) -> bool:
+        if len(args) == 0:
             return False
         resp = True
-        for arg in arg1:
+        for arg in args:
             resp = resp and arg == self.my_arg
         return resp
 

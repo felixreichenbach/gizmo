@@ -10,8 +10,6 @@ import grpclib.const
 if typing.TYPE_CHECKING:
     import grpclib.server
 
-import google.api.annotations_pb2
-
 from .. import proto
 
 

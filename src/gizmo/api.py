@@ -77,14 +77,13 @@ class GizmoService(GizmoServiceBase, ResourceRPCServiceBase):
 
     RESOURCE_TYPE = Gizmo
 
-    async def DoOne(self, stream: Stream[DoOneRequest, DoOneResponse]) -> None:
-        request = await stream.recv_message()
+    async def DoOne(self, request: DoOneRequest) -> DoOneResponse:
         assert request is not None
         name = request.name
         gizmo = self.get_resource(name)
         resp = await gizmo.do_one(request.arg1)
         response = DoOneResponse(ret1=resp)
-        await stream.send_message(response)
+        return response
 
     async def DoOneClientStream(self, stream: Stream[DoOneClientStreamRequest, DoOneClientStreamResponse]) -> None:
         requests = [request async for request in stream]

@@ -47,7 +47,7 @@ An example configuration for a Gizmo component could look like this:
   "modules": [
     {
       "name": "my-module",
-      "executable_path": "/home/viam-python-sdk/examples/module/run.sh"
+      "executable_path": "/github/gizmo/run.sh"
     }
   ]
 }

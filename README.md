@@ -1,5 +1,5 @@
 
-# VIAM Module Example
+# VIAM Custom Module/Resource Example
 This example goes through how to create custom modular resources using Viam's python SDK, and how to connect it to a Robot.
 
 This is a limited document. For a more in-depth understanding of modules, see the [documentation](https://docs.viam.com/program/extend/modular-resources/).

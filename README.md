@@ -46,7 +46,7 @@ An example configuration for a Gizmo component could look like this:
   ],
   "modules": [
     {
-      "name": "my-module",
+      "name": "gizmo",
       "executable_path": "/github/gizmo/run.sh"
     }
   ]

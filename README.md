@@ -25,6 +25,8 @@ These steps assume that you have a robot available at [app.viam.com](app.viam.co
 
 The `run.sh` script is the entrypoint for this module. To connect this module with your robot, you must add this module's entrypoint to the robot's config. For example, this could be `/home/viam-python-sdk/examples/module/run.sh`. See the [documentation](https://docs.viam.com/program/extend/modular-resources/#use-a-modular-resource-with-your-robot) for more details.
 
+![alt text](./media/gizmo_module_configuration.png)
+
 Once the module has been added to your robot, you will then need to add a component that uses the `MyGizmo` model. See the [documentation](https://docs.viam.com/program/extend/modular-resources/#configure-a-component-instance-for-a-modular-resource) for more details. You can add a service in a similar manner.
 
 An example configuration for a Gizmo component could look like this:
@@ -50,6 +52,10 @@ An example configuration for a Gizmo component could look like this:
   ]
 }
 ```
+
+![alt text](./media/gizmo_component_config.png)
+
+
 
 After the robot has started and connected to the module, you can use the provided `client.py` to connect to your robot and make calls to your custom, modular resources.
 
